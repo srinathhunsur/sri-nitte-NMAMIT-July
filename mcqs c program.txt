@@ -1,0 +1,283 @@
+1. What will be the output?
+#include<stdio.h>
+void func(int *p) {
+    *p = *p + 10;
+}
+int main() {
+    int x = 5;
+    func(&x);
+    printf("%d", x);
+    return 0;
+}
+A. 5
+B. 10
+C. 15
+D. Compilation error
+
+
+2. What will this program print?
+#include<stdio.h>
+int *getPointer() {
+    int x = 100;
+    return &x;
+}
+int main() {
+    int *ptr = getPointer();
+    printf("%d", *ptr);
+    return 0;
+}
+A. 100
+B. Garbage value
+C. Compilation error
+D. Segmentation fault
+
+
+What is the output of the program below?
+#include<stdio.h>
+void change(int a) {
+    a = 20;
+}
+int main() {
+    int x = 10;
+    change(x);
+    printf("%d", x);
+}
+A. 10
+B. 20
+C. Compilation error
+D. Garbage value
+
+
+What will be the output?
+#include<stdio.h>
+void foo(int *p) {
+    p = NULL;
+}
+int main() {
+    int x = 100;
+    int *ptr = &x;
+    foo(ptr);
+    printf("%d", *ptr);
+}
+A. 0
+B. 100
+C. Compilation error
+D. Segmentation fault
+
+
+#include<stdio.h>
+void fun(int a[]) {
+    printf("%d", sizeof(a));
+}
+int main() {
+    int arr[10];
+    fun(arr);
+}
+A. 10
+B. 40
+C. 4
+D. Size of pointer (platform dependent, usually 4 or 8)
+
+
+Which of the following correctly returns a pointer to a function that returns int?
+A. int *f();
+B. int (*f())();
+C. int *(*f())();
+D. int (*(*f())())();
+
+
+What will be the output of this program?
+#include<stdio.h>
+void fun(int* ptr) {
+    (*ptr)++;
+}
+int main() {
+    int x = 7;
+    fun(&x);
+    printf("%d", x);
+}
+A. 6
+B. 7
+C. 8
+D. Error
+
+
+What is the output of this code?
+#include<stdio.h>
+int main() {
+    int a = 5;
+    int *p1 = &a;
+    int **p2 = &p1;
+    **p2 = 10;
+    printf("%d", a);
+}
+A. 5
+B. 10
+C. 0
+D. Compilation error
+
+
+What is the output?
+#include<stdio.h>
+void modify(int *a, int *b) {
+    *a = *a + *b;
+    *b = *a - *b;
+    *a = *a - *b;
+}
+int main() {
+    int x = 4, y = 7;
+    modify(&x, &y);
+    printf("%d %d", x, y);
+}
+A. 4 7
+B. 7 4
+C. 11 -7
+D. Swap the values
+
+
+What will be the output?
+#include<stdio.h>
+struct Point {
+    int x;
+    int y;
+};
+void modify(struct Point p) {
+    p.x = 100;
+}
+int main() {
+    struct Point pt = {10, 20};
+    modify(pt);
+    printf("%d", pt.x);
+}
+A. 10	B. 100	C. Compilation error	D. Garbage value
+
+
+What is the output of this code?
+#include<stdio.h>
+struct Student {
+    char name[20];
+    int marks;
+};
+void update(struct Student *s) {
+    s->marks = 90;
+}
+int main() {
+    struct Student st = {"Ram", 50};
+    update(&st);
+    printf("%d", st.marks);
+}
+A. 50	B. 90	C. Error	D. Garbage
+
+
+What does this code output?
+#include<stdio.h>
+struct S {
+    int a;
+};
+struct S func() {
+    struct S temp = {99};
+    return temp;
+}
+int main() {
+    struct S obj = func();
+    printf("%d", obj.a);
+}
+A. 99	B. Garbage	C. Error	D. Segmentation fault
+
+
+What will be the output?
+#include<stdio.h>
+struct Node {
+    int data;
+    struct Node *next;
+};
+int main() {
+    struct Node n1 = {5, NULL};
+    struct Node n2 = {10, &n1};
+    printf("%d", n2.next->data);
+}
+A. 5
+B. 10
+C. 0
+D. Error
+
+Identify the error in this code:
+#include<stdio.h>
+struct Emp {
+    int id;
+    float salary;
+};
+void show(struct Emp e) {
+    printf("%d %.2f", id, e.salary);
+}
+A. No error
+B. id is undefined in show()
+C. Wrong return type
+D. Cannot pass struct to function
+
+
+Which of the following is the correct way to declare a function returning a structure?
+A. struct Student getStudent();
+B. Student getStudent();
+C. struct getStudent();
+D. struct Student();
+
+
+What will this code print?
+#include<stdio.h>
+struct Data {
+    int a;
+};
+void fun(struct Data *d) {
+    d->a += 5;
+}
+int main() {
+    struct Data d = {10};
+    fun(&d);
+    printf("%d", d.a);
+}
+A. 10	B. 15	C. Garbage	D. Error
+
+What happens here?
+#include<stdio.h>
+struct X {
+    int arr[3];
+};
+void update(struct X x) {
+    x.arr[0] = 100;
+}
+int main() {
+    struct X obj = {{1,2,3}};
+    update(obj);
+    printf("%d", obj.arr[0]);
+}
+A. 100
+B. 1
+C. 3
+D. Error
+
+Which of the following is true about structure and functions in C?
+A. Structures cannot be passed to functions
+B. Structures must always be passed by pointer
+C. Structures can be passed by value or pointer
+D. You cannot return a structure from a function
+
+
+What is the output?
+#include<stdio.h>
+struct A {
+    int x;
+};
+struct A fun() {
+    struct A obj = {5};
+    return obj;
+}
+int main() {
+    printf("%d", fun().x);
+}
+A. 5
+B. Error
+C. Garbage
+D. 0
+
+

@@ -1,0 +1,63 @@
+1. Maximum Sum Subarray (Kadane’s Algorithm)
+Company: TCS / Infosys
+Problem:
+Given an array of integers, find the maximum sum of a contiguous subarray.
+Input:
+arr = [-2, -3, 4, -1, -2, 1, 5, -3]
+Output:
+7
+
+Explanation: Subarray [4, -1, -2, 1, 5] gives maximum sum = 7
+
+
+
+2. String Compression
+Company: Wipro / Cognizant
+Problem:
+Compress a string using the counts of repeated characters. If the compressed string is not smaller than the original, return the original.
+Input:
+Input: aabcccccaaa  
+Output: a2b1c5a3
+Note: If compressed string length ≥ original, return original.
+
+
+
+3. Rearrange Array Alternately
+Company: Capgemini
+Problem:
+Given a sorted array, rearrange it in maximum-minimum form without using extra space.
+Input:
+arr = {1, 2, 3, 4, 5, 6, 7}
+Output:
+7 1 6 2 5 3 4
+
+
+
+4. Binary Number with Alternating Bits
+Company: Tech Mahindra
+Problem:
+Check if a given integer has an alternating binary pattern (no two adjacent bits are the same).
+Input:
+Input: 5  (Binary: 101)
+Output: true
+
+Input: 7  (Binary: 111)
+Output: false
+
+
+
+5. Matrix Diagonal Difference
+Company: Infosys / Cognizant
+Problem:
+Given a square matrix, calculate the absolute difference between the sums of its diagonals.
+Input:
+3
+11   2   4
+4     5   6
+10  8  -12
+Output:
+15
+Explanation: |(11 + 5 + (-12)) - (4 + 5 + 10)| = |4 - 19| = 15
+
+
+

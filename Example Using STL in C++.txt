@@ -1,0 +1,21 @@
+Example: Using STL in C++
+#include <iostream>
+#include <vector>
+#include <algorithm> // for sort()
+
+using namespace std;
+
+int main() {
+    vector<int> nums = {5, 2, 8, 1, 9};
+
+    // Sorting the vector
+    sort(nums.begin(), nums.end());
+
+    // Display sorted elements
+    for (int num : nums) {
+        cout << num << " ";
+    }
+
+    return 0;
+}
+

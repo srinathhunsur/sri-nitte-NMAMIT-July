@@ -1,0 +1,45 @@
+#include<iostream>
+using namespace std;
+class Counter
+{
+private:
+	unsigned int count;
+public:
+	Counter()
+	{
+		count=0;
+	}
+	void inc_count()
+	{
+	count++;
+	}
+	int getcount()
+	{
+		return count;
+	}	
+};
+int main()
+{
+	Counter c1, c2;
+	cout<<"\nc1 = "<<c1.getcount();
+	cout<<"\nc2 = "<<c2.getcount();
+
+	c1.inc_count();
+	c2.inc_count();
+	c2.inc_count();
+	cout<<"\nc1 = "<<c1.getcount();
+	cout<<"\nc2 = "<<c2.getcount();
+	return 0;
+}
+
+
+
+
+
+
+
+
+>>Constructors are used to set initial values for data members
+>>Constructors will have the same name as class name
+>>Constructors can be with no argument (default constructors) or it can have arguments (parameters).
+>>Constructors are called when the objects are created.

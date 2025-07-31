@@ -1,0 +1,279 @@
+1. Classes and Objects
+A class is a blueprint for creating objects. Objects are instances of a class.
+
+#include <iostream>
+using namespace std;
+
+class Car {
+private:
+    string brand;
+    string model;
+    int year;
+
+public:
+    void setdata()
+    {
+	brand = "Toyota";
+        model = "Corolla";
+        year = 2020;
+    }
+    void getdata()
+    {
+	cout<<"Enter brand :";
+	cin>>brand;
+	cout<<"Enter model :";
+	cin>>model;
+	cout<<"Enter year :";
+	cin>>year;
+    }
+    void display() 
+    {
+        cout << "Brand: " << brand << ", Model: " << model << ", Year: " << year << endl;
+    }
+};
+
+int main() {
+    Car car1, car2;
+    car1.setdata();
+
+    car2.getdata();
+    cout<<"Details of car1"<<endl;
+    car1.display();
+    cout<<"Details of car2"<<endl;
+    car2.display();    
+    return 0;
+}
+
+
+
+
+
+
+
+
+2. Encapsulation
+Encapsulation is the bundling of data and methods that operate on that data, restricting direct access to some of the object's components.
+
+
+#include <iostream>
+using namespace std;
+
+class BankAccount {
+private:
+    double balance;
+
+public:
+    void deposit(double amount) {
+        if (amount > 0) {
+            balance += amount;
+        }
+    }
+
+    void withdraw(double amount) {
+        if (amount > 0 && amount <= balance) {
+            balance -= amount;
+        }
+    }
+
+    double getBalance() {
+        return balance;
+    }
+};
+
+int main() {
+    BankAccount account;
+    account.deposit(1000);
+    account.withdraw(500);
+
+    cout << "Current Balance: " << account.getBalance() << endl;
+
+    return 0;
+}
+
+
+
+
+
+
+3. Inheritance
+Inheritance allows a class to inherit properties and methods from another class.
+
+
+#include <iostream>
+using namespace std;
+
+class Animal {
+public:
+    void eat() {
+        cout << "This animal eats food." << endl;
+    }
+};
+
+class Dog : public Animal {
+public:
+    void bark() {
+        cout << "The dog barks." << endl;
+    }
+};
+
+int main() {
+    Dog dog;
+    dog.eat();  // Inherited from Animal
+    dog.bark(); // Specific to Dog
+
+    return 0;
+}
+
+
+
+
+
+
+4. Polymorphism
+Polymorphism allows objects of different classes to be treated as objects of a common superclass.
+
+
+#include <iostream>
+using namespace std;
+
+class Animal {
+public:
+    virtual void sound() {
+        cout << "Animal makes a sound." << endl;
+    }
+};
+
+class Dog : public Animal {
+public:
+    void sound() override {
+        cout << "Dog barks." << endl;
+    }
+};
+
+class Cat : public Animal {
+public:
+    void sound() override {
+        cout << "Cat meows." << endl;
+    }
+};
+
+int main() {
+    Animal* animal1 = new Dog();
+    Animal* animal2 = new Cat();
+
+    animal1->sound(); // Output: Dog barks.
+    animal2->sound(); // Output: Cat meows.
+
+    delete animal1;
+    delete animal2;
+
+    return 0;
+}
+
+
+
+
+
+5. Abstraction
+Abstraction is the concept of hiding complex implementation details and showing only the necessary features of an object.
+
+
+#include <iostream>
+using namespace std;
+
+class AbstractCalculator {
+public:
+    virtual int add(int a, int b) = 0; // Pure virtual function
+    virtual int subtract(int a, int b) = 0; // Pure virtual function
+};
+
+class Calculator : public AbstractCalculator {
+public:
+    int add(int a, int b) override {
+        return a + b;
+    }
+
+    int subtract(int a, int b) override {
+        return a - b;
+    }
+};
+
+int main() {
+    Calculator calc;
+    cout << "Addition: " << calc.add(10, 5) << endl;
+    cout << "Subtraction: " << calc.subtract(10, 5) << endl;
+
+    return 0;
+}
+
+
+
+
+
+
+
+
+1. Classes and Objects**: A class is a blueprint, and an object is an instance of a class.
+2. Encapsulation: Hiding data and exposing only necessary methods.
+3. Inheritance: Deriving a class from another class to reuse code.
+4. Polymorphism: Using a single interface to represent different types.
+5. Abstraction: Hiding implementation details and showing only essential features.
+
+
+
+
+
+
+
+
+
+
+
+
+#include <iostream>
+using namespace std;
+
+class MyClass {
+public:
+    MyClass() {
+        cout << "Default Constructor Called!" << endl;
+    }
+};
+
+int main() {
+    MyClass obj; // Default constructor is called
+    return 0;
+}
+
+
+
+
+#include <iostream>
+using namespace std;
+
+class Rectangle {
+private:
+    int length, width;
+
+public:
+    Rectangle(int l, int w) { // Parameterized constructor
+        length = l;
+        width = w;
+    }
+
+    int area() {
+        return length * width;
+    }
+};
+
+int main() {
+    Rectangle rect(5, 10); // Parameterized constructor is called
+    cout << "Area: " << rect.area() << endl;
+
+    return 0;
+}
+
+
+
+
+

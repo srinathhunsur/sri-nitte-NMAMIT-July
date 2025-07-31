@@ -1,0 +1,55 @@
+#include<iostream>
+#include<string.h>
+#include<stdlib.h>
+using namespace std;
+
+
+class String
+{	
+private:
+	char str[80];
+
+public:
+	String()
+	{
+	strcpy(str,"");
+	}
+	String(char s[])
+	{
+	strcpy(str,s);
+	}
+	void display() const
+	{
+		cout<<str;
+	}
+	String operator + (String ss) const
+	{
+	String temp;
+	strcpy(temp.str,str);
+	strcat(temp.str,ss.str);
+	return temp;
+	}
+};
+
+int main()
+{
+String s1("Mumbai");
+String s2("City");
+String s3;
+
+s1.display();
+cout<<endl;
+s2.display();
+cout<<endl;
+
+s3.display();
+
+s3=s1+s2;		//operator overloading
+
+s3.display();
+cout<<endl;
+return 0;
+}
+
+
+

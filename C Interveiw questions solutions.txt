@@ -1,0 +1,95 @@
+Q 6. What are preprocessor directives in C?
+In C preprocessor directives are considered the built-in predefined functions or macros that act as a directive to the compiler and are executed before the program execution.
+
+There are multiple steps involved in writing and executing a program in C.
+
+Main types of Preprocessor Directives are Macros, File Inclusion, Conditional Compilation, and Other directives like #undef, #pragma, etc.
+
+
+Q 8. What is the difference between malloc() and calloc() in the C programming language?
+
+Malloc
+It is a function that creates one block of memory of a fixed size.
+It only takes one argument.
+malloc() function is faster than calloc().
+It has high time efficiency.
+It is used to indicate memory allocation.
+
+Calloc
+It is a function that assigns more than one block of memory to a single variable.
+It takes two arguments.
+
+calloc() is slower than malloc().
+It has low time efficiency.
+It is used to indicate contiguous memory allocation.
+
+
+
+Q 9. What do you mean by dangling pointers and how are dangling
+pointers different from memory leaks in C programming?
+
+Pointers pointing to deallocated memory blocks in C Programming are known as dangling pointers i.e, whenever a pointer is pointing to a memory location and In case the variable is deleted and the pointer still points to that same memory location then it is known as a dangling pointer variable.
+
+In C programming memory leak occurs when we allocate memory with
+the help of the malloc() or calloc() library function, but we forget to free the allocated memory with the help of the free() library function. Memory leak causes the program to use an undefined amount of memory from the RAM which makes it unavailable for other running programs this causes our program to crash.
+
+
+Q 16. What is the difference between type casting and type
+conversion?
+Type casting
+The data type is converted to another data type by a programmer with the help of a casting operator.
+
+It can be applied to both compatible data types as well as
+incompatible data types.
+
+In Type casting in order to cast the data type into another data
+type, a caste operator is needed
+
+Type casting is more efficient and reliable.
+
+Type casting takes place during the program design by the
+programmer.
+
+Syntax:
+destination_data_type = (target_data_type) variable_to_be_converted;
+
+
+Type conversion:
+The data type is converted to another data by a compiler.
+Type conversion can only be applied to only compatible data
+types.
+
+In type conversion, there is no need for a casting operator.
+
+Type conversion is less efficient and less reliable than type casting.
+
+Type conversion is done at compile time.
+
+Syntax:
+int a = 20; 
+float b; 
+b = a; // a = 20.0000
+
+
+Q 19. What is the difference between macro and functions?
+A macro is a name that is given to a block of C statements as a pre-processor directive.
+Macro is defined with the pre-processor directive. Macros are pre-processed which means that all the macros would be preprocessed before the compilation of our program.
+However, functions are not preprocessed but compiled.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
